@@ -48,12 +48,49 @@ ICMP traffic between Windows-VM (10.0.0.13) & Google (10.0.0.14)
 Start by initiating a perpetual ping to the Linux-VM (10.0.0.14)
 <p>
 </p>
-<img src="https://i.imgur.com/7SyzPuV.png" height="80%" width="80%" alt="Disk Sanitization Steps"/><img src="https://i.imgur.com/7SyzPuV.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/7SyzPuV.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<p></p>
+Create a rule that denies ICMP traffic
+<p></p>
+<img src="https://i.imgur.com/L820qIl.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<p></p>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
+After the rule is created, it stops the flow of the perpetual pings, resulting in the request being timed out and no response being found in Wireshark.
+<p></p>
+<img src="https://i.imgur.com/YRckMBN.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<p></p>
+<img src="https://i.imgur.com/3wEDlvc.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<p></p>
+Get rid of the rule and observe the replies continue
+<p></p>
+<img src="https://i.imgur.com/iIUzOld.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<p></p>
 
-<p>
-</p>
+<h3> Observing SSH Traffic </h3>
+<p></p>
+From the Windows-VM SSH into the Linux-VM, then start typing
+<p></p>
+<img src="https://i.imgur.com/EwTRUdt.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+Every single time something is typed while logged in through SSH will transport data
+<img src="https://i.imgur.com/uxKEEiD.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+<h3> Observing DHCP Traffic</h3>
+<p></p>
+
+Run the command "ipconfig /renew" on the Windows-VM
+<p></p>
+<img src="https://i.imgur.com/uxKEEiD.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<p></p>
+What occurs here is the request to renew the IP, and the Domain Name System acknowledges the request
+<p></p>
+<h3> Observing DNS Traffic</h3>
+<p></p>
+Filtering for DNS traffic, nslookup Google & Disney
+<img src="https://i.imgur.com/KY5ScbL.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/TgAx7RX.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<p></p>
+There is a log for each time the Windows VM checks a DNS server for the name until it is eventually found.
+<p></p>
+
 
