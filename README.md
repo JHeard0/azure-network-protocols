@@ -72,7 +72,7 @@ From the Windows-VM SSH into the Linux-VM, then start typing
 <p></p>
 <img src="https://i.imgur.com/EwTRUdt.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
-Every single time something is typed while logged in through SSH will transport data
+Every single time something is typed while logged in through SSH, it will transport data
 <img src="https://i.imgur.com/uxKEEiD.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
 <h3> Observing DHCP Traffic</h3>
@@ -90,7 +90,17 @@ Filtering for DNS traffic, nslookup Google & Disney
 <img src="https://i.imgur.com/KY5ScbL.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <img src="https://i.imgur.com/TgAx7RX.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <p></p>
-There is a log for each time the Windows VM checks a DNS server for the name until it is eventually found.
+Each time the Windows VM checks a DNS server for the name, there is a log entry until it is eventually found.
+<p></p>
+<h3>Observing RDP</h3>
+<p></p>
+When using a virtual machine, it's constantly running the Remote Desktop Protocol. Which will result in seeing constant text when observing.
 <p></p>
 
+<img src="https://i.imgur.com/yjBUTPm.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
+<h2>The End of The Lab, Check Out The Other Labs</h2>
+Configuring On-premises Active Directory within Azure VMs: (https://github.com/JHeard0/configure-ad)
+<p></p>
+osTicket: Ticket Lifecycle Examples:
+(https://github.com/JHeard0/ticket-lifecycle)
